@@ -13,12 +13,20 @@ import { AppComponent } from './app.component';
 import 'hammerjs';
 import { MenuComponent } from './menu/menu.component';
 import { CertificatesComponent } from './certificates/certificates.component';
+import { DishService } from './services/dish.service';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    CertificatesComponent
+    CertificatesComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -29,9 +37,18 @@ import { CertificatesComponent } from './certificates/certificates.component';
     FlexLayoutModule,
     MatGridListModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    FontAwesomeModule
   ],
-  providers: [],
+  providers: [
+    DishService
+
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(library: FaIconLibrary) {
+    // Add an icon to the library for convenient access in other components
+    library.addIcons(faCoffee);
+  }
+ }
