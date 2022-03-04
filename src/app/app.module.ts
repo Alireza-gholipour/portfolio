@@ -7,6 +7,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { PromotionService } from './services/promotion.service';
 
 import { AppRoutingModule1 } from './app-routing1.module';
 import { AppComponent } from './app.component';
@@ -48,7 +49,8 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
     AppRoutingModule
   ],
   providers: [
-    DishService
+    DishService,
+    PromotionService
 
   ],
   bootstrap: [AppComponent]
